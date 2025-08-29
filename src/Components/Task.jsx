@@ -32,7 +32,7 @@ useEffect(()=>{
   return (
     <>
       <div  className="w-full flex flex-row-reverse gap-5 items-center p-3 rounded-xl justify-between bg-linear-to-r from-blue-800 to-blue-400">
-        <div className="flex wrap-anywhere max-w-3/4  flex-row-reverse items-center gap-3 ">
+        <div className="flex flex-row-reverse items-center gap-3 ">
           <button
             className={`text-gray-50 bg-gray-50 relative overflow-hidden w-10 h-10 shrink-0 rounded-2xl appearance-none hover:rotate-12 duration-200 active:scale-90 hover:scale-110 ${
               task.isCompleted
@@ -61,10 +61,10 @@ useEffect(()=>{
           <div
             className='flex flex-col items-end gap-3'
           >
-            <h2 className={`${task.isCompleted ? "line-through opacity-85 text-gray-300" : "" } text-white text-right text-3xl `}>{task.title}</h2>
+            <h2 className={`${task.isCompleted ? "line-through opacity-85 text-gray-300" : "" } text-white text-right text-3xl wrap-anywhere `}>{task.title}</h2>
 
           
-              <p  ref={ref} dir="rtl" className={`text-white ${isReadMore?'line-clamp-none ':'line-clamp-2 '} text-right text-sm  ${task.isCompleted ? "line-through opacity-85 text-gray-300" : "" }`}>  {task.details}</p>
+              <p  ref={ref} dir="rtl" className={`text-white ${isReadMore?'line-clamp-none ':'line-clamp-2 '} wrap-anywhere text-right text-sm  ${task.isCompleted ? "line-through opacity-85 text-gray-300 " : "" }`}>  {task.details}</p>
 {isReadMoreVisible? <button className="bg-sky-400 p-1 font-medium rounded-2xl text-xs text-white hover:bg-sky-600 duration-200" onClick={()=>{setIsReadMore(!isReadMore)}}>{!isReadMore ?'اقرأ اكثر':'اقرأ أقل'}</button>
               :null
 }

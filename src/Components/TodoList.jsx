@@ -76,23 +76,23 @@ const noneCompletedTasks = tasks.filter((t)=>{
               onChange={(e) => {
                 setTaskInput({ ...taskInput, title: e.target.value });
               }}
-              className="p-2 w-2/3 outline-0 border-2 rounded text-center border-black"
+              className="p-2 w-2/3 outline-0 border-2 text-center rounded  border-black"
               type="text"
               placeholder="عنوان المهمة"
             />
-            <textarea onKeyDown={(e)=>{e.key=='Enter' && !isDisabled?handleAddClick():null}}
+            <textarea dir="rtl" onKeyDown={(e)=>{e.key=='Enter' && !isDisabled?handleAddClick():null}}
               value={taskInput.details}
               onChange={(e) => {
                 setTaskInput({ ...taskInput, details: e.target.value });
               }}
-              className="p-2 w-full text-end outline-0 border-2 rounded border-black"
+              className="p-2 w-full outline-0 placeholder-gray-500/65 border-2 rounded border-black"
               placeholder="تفاصيل المهمة"
             ></textarea>
           </div>
             <button disabled={isDisabled}
 
             onClick={handleAddClick}
-            className={` text-sm -ml-2 border-2 border-gray-700 text-white  p-3 rounded-sm w-1/4 ${isDisabled?'bg-gray-400':'hover:border-blue-00 hover:bg-sky-600 bg-sky-400 duration-200 border-2 border-sky-900'}`}
+            className={` text-sm -ml-2 border-2 border-gray-700 placeholder-gray-500/65 text-white  p-3 rounded-sm w-1/4 ${isDisabled?'bg-gray-400':'hover:border-blue-00 hover:bg-sky-600 bg-sky-400 duration-200 border-2 border-sky-900'}`}
           >
             اضافة
           </button>
