@@ -44,7 +44,7 @@ const noneCompletedTasks = tasks.filter((t)=>{
 
   return (
    <>
-      <div className="bg-white relative p-5 rounded-xl w-full md:w-[50%] gap-6 flex flex-col items-center justify-center  ">
+      <div className="bg-white relative p-5 rounded-xl w-full md:w-[50%] gap-6 flex flex-col items-center justify-center   ">
         <h1 style={{ fontWeight: 900 }} className="text-4xl md:text-5xl">
           قائمة المهام
         </h1>
@@ -70,13 +70,13 @@ const noneCompletedTasks = tasks.filter((t)=>{
 
 
         <div className="w-full flex flex-row-reverse items-center justify-between ">
-          <div className="w-3/4 flex flex-col items-end gap-2">
+          <div dir="rtl" className="w-3/4 flex flex-col items-start gap-2">
             <input onKeyDown={(e)=>{e.key=='Enter' && !isDisabled?handleAddClick():''}} 
               value={taskInput.title}
               onChange={(e) => {
                 setTaskInput({ ...taskInput, title: e.target.value });
               }}
-              className="p-2 w-2/3 outline-0 border-2 text-center rounded  border-black"
+              className="p-2 w-2/3 outline-0 border-2 placeholder:text-center text-center rounded border-black"
               type="text"
               placeholder="عنوان المهمة"
             />
