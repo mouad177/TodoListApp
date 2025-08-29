@@ -34,7 +34,7 @@ useEffect(()=>{
   return (
     <>
       <div  className="w-full flex flex-row-reverse gap-5 items-center p-3 rounded-xl justify-between bg-linear-to-r from-blue-800 to-blue-400">
-        <div className="flex flex-row-reverse items-center gap-3 w-3/4  ">
+        <div className="flex flex-row-reverse items-center gap-3 max-w-3/4  ">
           <button
             className={`text-gray-50 bg-gray-50 relative overflow-hidden w-10 h-10 shrink-0 rounded-2xl appearance-none hover:rotate-12 duration-200 active:scale-90 hover:scale-110 ${
               task.isCompleted
