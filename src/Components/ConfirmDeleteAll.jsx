@@ -16,9 +16,9 @@ function ConfirmDeleteAll({ isVisible, setIsVisible }) {
     return (
       <>
     <div className="bg-black/60 fixed inset-0 z-10 justify-center w-screen h-full shadow-2xl flex flex-col items-center gap-6 text-center p-4 rounded-xl">
-              <div className="w-[400px] absolute bg-white shadow-2xl flex flex-col items-center gap-6 text-center p-3 rounded-xl">
+              <div className="md:w-[400px] absolute bg-white shadow-2xl flex flex-col items-center gap-6 text-center p-3 rounded-xl">
 
-          <h2 className="text-2xl">هل انت متاكد من رغبتك بحذف جميع المهام ؟</h2>
+          <h2 className="text-lg md:text-2xl">هل انت متاكد من رغبتك بحذف جميع المهام ؟</h2>
           <p className="text-black/60 text-sm">
             لا يمكنك التراجع عن الحذف في حال اختيار حذف
           </p>

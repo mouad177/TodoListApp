@@ -34,7 +34,7 @@ function handleEditClick(){
     return (
       <>
     <div className="bg-black/60 fixed inset-0 z-10  w-screen h-screen flex items-center justify-center">
-              <div className="w-[400px] absolute bg-white shadow-2xl flex flex-col items-center gap-6 text-center p-3 rounded-xl">
+              <div className="w-[300px] md:w-[400px] absolute bg-white shadow-2xl flex flex-col items-center gap-6 text-center p-3 rounded-xl">
           <h2 className="text-2xl">تعـديل المهــمة</h2>
 <div className="flex flex-col items-center gap-4 w-full">
     <input value={updateInput.title} onChange={(e)=>{setUpdateInput({...updateInput,title:e.target.value})}} className="w-3/4 p-3 outline-black/50 rounded-xl text-sm border-2 border-black/50 text-center" placeholder="عنوان المهمة" type="text" />
