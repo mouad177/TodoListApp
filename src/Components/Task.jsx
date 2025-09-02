@@ -63,7 +63,7 @@ useEffect(()=>{
           <div
             className='flex flex-col items-end gap-3'
           >
-            <h2 className={`${task.isCompleted ? "line-through opacity-85 text-gray-300" : "" } text-white text-right text-lg md:text-2xl ${task.details.split('').length>0?'wrap-anywhere':'break-words'}`} >{task.title}</h2>
+            <h2 className={`${task.isCompleted ? "line-through opacity-85 text-gray-300" : "" } text-white text-right text-lg md:text-2xl ${task.title.split('').length>0?'wrap-anywhere':'break-words'}`} >{task.title}</h2>
 
           
               <p  ref={ref} dir="rtl" className={`text-white ${isReadMore?'line-clamp-none ':'line-clamp-2 '} text-right text-xs md:text-sm  ${task.isCompleted ? "line-through opacity-85 text-gray-300 " : "" }

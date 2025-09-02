@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { TaskContext } from "../Contexts/TaskContext";
 
 function ConfirmEdit({ task, isVisible, setIsVisible }) {
@@ -16,6 +16,20 @@ function handleEditClick(){
         localStorage.setItem("task",JSON.stringify(updateTasks))
 
 }
+  const textAreaRef = useRef(null);
+
+  useEffect(() => {
+    if (textAreaRef.current) {
+      let maxHeight = 120;
+      textAreaRef.current.style.height = "auto";
+      if (textAreaRef.current.scrollHeight > maxHeight) {
+        textAreaRef.current.style.height = maxHeight + "px";
+        textAreaRef.current.style.overflowY = "scroll";
+      } else {
+        textAreaRef.current.style.height = textAreaRef.current.scrollHeight +'px';
+      }
+    }
+  }, [updateInput.details]);
   if (isVisible) {
     return (
       <>
@@ -24,7 +38,7 @@ function handleEditClick(){
           <h2 className="text-2xl">تعـديل المهــمة</h2>
 <div className="flex flex-col items-center gap-4 w-full">
     <input value={updateInput.title} onChange={(e)=>{setUpdateInput({...updateInput,title:e.target.value})}} className="w-3/4 p-3 outline-black/50 rounded-xl text-sm border-2 border-black/50 text-center" placeholder="عنوان المهمة" type="text" />
-<textarea value={updateInput.details} onChange={(e)=>{setUpdateInput({...updateInput,details:e.target.value})}} className="w-3/4 p-3 outline-black/50 rounded-xl text-sm border-2 border-black/50 text-end" placeholder="التفاصيل" />
+<textarea ref={textAreaRef} value={updateInput.details} onChange={(e)=>{setUpdateInput({...updateInput,details:e.target.value})}} className="w-3/4 p-3 h-36 outline-black/50 resize-none rounded-xl text-sm border-2 border-black/50 text-end" placeholder="التفاصيل" />
 </div>
 <div className="flex items-center gap-4">
               <button disabled={isDisabled}
@@ -37,6 +51,7 @@ function handleEditClick(){
           <button 
             onClick={() => {
               setIsVisible(false);
+              setUpdateInput({title:task.title,details:task.details})
             }}
             className="text-white p-2 rounded-xl bg-gradient-to-r from-blue-400 via-sky-600 to-sky-500 hover:from-blue-600 hover:via-sky-700 hover:to-sky-800"
           >
